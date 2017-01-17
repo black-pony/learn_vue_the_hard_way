@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <input type="text" my-focus>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script>
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+
+        }]);
+        myApp.directive('myFocus',function(){
+            return {
+                restrict:'A',
+                link:function(scope,element,attributes){
+                    element[0].focus();
+                }
+            };
+        });
+    </script>
+</body>
+</html>

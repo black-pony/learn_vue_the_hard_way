@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demo">
+    <input type="button" v-on:click="fn" value="v-on:click点击触发">
+    <input type="button" @click="fn" value="@click点击触发">
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var app = new Vue({
+      el:"#demo",
+      data:{
+        arr:[2,3,4],
+        obj:{name:"eric zheng",sex:"male"}
+      },
+      methods:{
+        fn:function(){
+          alert("被点击了");
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

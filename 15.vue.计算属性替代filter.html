@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myApp">
+       <ul>
+           <li v-for="item in arr1">{{item}}</li>
+       </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                arr:[2,3,4,5,6]
+            },  
+            computed:{
+                arr1:function(){
+                    return this.arr.filter(function(item){return item > 4});
+                }
+            }
+        });
+        vm.$watch('message2',function(now,pre){
+            console.log(now,pre);
+        })
+    </script>
+</body>
+</html>

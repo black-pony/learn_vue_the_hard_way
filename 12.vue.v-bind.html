@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myApp">
+        <input type="text" v-bind="{id:myId,myAttr:myAttr,value:myValue}">
+        <img v-bind:src="myImgSrc">
+        <img :src="myImgSrc">
+        <a v-bind:href="myUrl">百度</a>
+        <a :href="myUrl">百度</a>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                myId:'demo',
+                myAttr:'demoAttr',
+                myValue:'wfewf',
+                myImgSrc:'http://i0.hdslb.com/bfs/archive/ac6ad98e868f313a332eb757634ddc9fcd5d7753.jpg@.webp',
+                myUrl:'http://baidu.com',
+            }
+        });
+    </script>
+</body>
+</html>

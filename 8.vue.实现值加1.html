@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="myApp">
+        <input type="button" v-on:click="counter = (counter - 0) + 1" v-model="counter">
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'.myApp',
+            data:{
+                counter:1
+            }
+        })
+    </script>
+</body>
+</html>

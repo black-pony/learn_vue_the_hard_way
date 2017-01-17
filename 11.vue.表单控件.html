@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="form-input">
+    <span>message is {{message}}</span>
+    <br>
+    <input type="text" v-model="message">
+  </div>
+  <hr>
+  <div class="form-chkbox">
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{checked}}</label>
+  </div>
+  <hr>
+  <div class="form-chkboxes">
+   <input type="checkbox" id="jack" v-model="checkedNames" value="jack">
+   <input type="checkbox" id="john" v-model="checkedNames" value="john">
+    <br>
+    message:{{checkedNames | json}}
+  </div>
+  <hr>
+  <div class="form-radio">
+    <label for="one">one</label>
+    <br>
+    <input type="radio" id="one" value="one" v-model="picked">
+    <br>
+    <label for="two">two</label>
+    <input type="radio" value="two" v-model="picked">
+    <br>
+    <span>Picked:{{picked}}</span>
+  </div>
+  <hr>
+  <div class="form-select">
+    <select v-model="selected">
+      <option>A</option>
+      <option selected>B</option>
+      <option>C</option>
+    </select>
+    <br>
+    <span>selected:{{selected}}</span>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+   new Vue({
+     el:".form-input",
+     data:{
+       message:""
+     }
+   });
+   new Vue({
+     el:".form-chkbox",
+     data:{
+       checked:false
+     }
+   });
+   new Vue({
+     el:".form-chkboxes",
+     data:{
+       checkedNames:[]
+     }
+   });
+   new Vue({
+     el:".form-radio",
+     data:{
+       picked:''
+     }
+   });
+   new Vue({
+     el:".form-select",
+     data:{
+       selected:''
+     }
+   });
+  </script>
+</body>
+</html>

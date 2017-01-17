@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demo">
+    <div v-bind:class="{red:isRed}">11</div>
+    <div v-bind:class="{a,b}">111</div>
+    <div v-bind:class="[c,{d:isD,e:isE}]">111</div>
+    <!--绑定style-->
+    <div v-bind:style="{fontSize:size + 'px'}">111</div>
+    <div v-bind:style="{{width:'100px'},styleObjectB}">11</div>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el:"#demo",
+      data:{
+        isRed:true,
+        size:20,
+        a:true,
+        b:false,
+        c:"world",
+        isD:true,
+        isE:true,
+        styleObjectA:{
+          color:'red',
+          fontSize:'13px'
+        },
+        styleObjectB:{
+          backgroundColor:'cyan'
+        }
+      }
+    });
+  </script>
+</body>
+</html>

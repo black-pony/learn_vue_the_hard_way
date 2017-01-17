@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-view></div>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+    <script>
+        var myApp = angular.module('myApp',['ngRoute']);
+        myApp.config(['$routeProvider',function($routeProvider){
+            $routeProvider
+                .when('/foo',{
+                    template:'<h1>foo</h1>',
+                    controller:'fooController'
+                })
+                .when('/bar',{
+                    template:'<h1>bar</h1>',
+                    controller:'fooController'
+                })
+                .otherwise({
+                    template:'<h1>foo</h1>',
+                    controller:'fooController'
+                });
+        }]);
+        myApp.controller('fooController',['$scope',function($scope){
+
+        }]);
+        myApp.controller('barController',['$scope',function($scope){
+            
+        }]);
+
+    </script>
+</body>
+</html>

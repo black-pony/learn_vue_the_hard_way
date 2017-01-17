@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/black-pony/learn_vue_the_hard_way#readme",
   "dependencies": {
-    "angular": "^1.6.1"
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "vue": "^2.1.9"
   }
 }

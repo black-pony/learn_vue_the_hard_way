@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demo">
+    <label for="one">one</label>
+    <input type="radio" id="one" v-model="picked" value="one">
+    <label for="two">two</label>
+    <input type="radio" id="two" v-model="picked" value="two">
+    <div v-show="picked==='one'">yes</div>
+    <div v-show="picked!='one'">No</div>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el:"#demo",
+      data:{
+        picked:'one'
+      }
+    });
+  </script>
+</body>
+</html>

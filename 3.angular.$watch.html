@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <!--当我们修改下面的input的值的时候，会影响model里面message值-->
+    <input type="text" ng-model="message">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script>
+        window.onload= function(){
+            document.getElementsByTagName("input")[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.message = 'Hello world';
+            $scope.$watch('message',function(now,prev){
+                console.log(now,prev);
+            });
+        }]);
+    </script>
+</body>
+</html>

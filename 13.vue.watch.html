@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myApp">
+       <input type="text" v-model="message1">
+       <input type="text" v-model="message2">
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#myApp',
+            data:{
+                message1:'hello1',
+                message2:'hello2'
+            },  
+            watch:{
+                message1:function(now,pre){
+                    console.log(now,pre);
+                }
+            }
+        });
+        vm.$watch('message2',function(now,pre){
+            console.log(now,pre);
+        })
+    </script>
+</body>
+</html>

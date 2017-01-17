@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            outline: 1px solid green;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <!--当我们修改下面的input的值的时候，会影响model里面message值-->
+    {{'1484657346797'|date}}
+    <ul>
+        <li ng-repeat="item in arr | filter : {isTrue:true}">{{item.name}}</li>
+    </ul>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script>
+        window.onload= function(){
+            document.getElementsByTagName("input")[0].focus()
+        };
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.arr = [
+                {name:'itcast',isTrue:true},
+                {name:'heima',isTrue:false},
+                {name:'chuanzhi',isTrue:true},
+                {name:'black-pony',isTrue:false}
+            ];
+        }]);
+    </script>
+</body>
+</html>
