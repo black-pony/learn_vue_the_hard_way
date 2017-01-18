@@ -4,5 +4,4 @@ The original hard Way book for total beginners to finally learn how to code. Lea
 ## the related post
 [点击相关文章](http://zhengwei.farbox.com/post/javascript/2017-01-14-1)
 
-![](http://ojmkbnynx.bkt.clouddn.com/17-1-17/86909526-file_1484655906195_d881.jpg)
 
